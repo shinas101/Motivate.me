@@ -1,73 +1,66 @@
-# React + TypeScript + Vite
+# Motivation App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application that displays motivational quotes, images, and AI-generated content to inspire and motivate users. The app allows users to get random motivational content from various sources including:
 
-Currently, two official plugins are available:
+- Pre-written quotes from a local dataset
+- Random motivational images
+- AI-generated quotes from movies, TV shows, books, and more (requires Gemini API key)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- **View Random Motivational Content**: Get a random quote, image, or AI-generated motivational content with each button click
+- **Add New Quotes**: Users can add their own quotes to the collection
+- **Remove Quotes**: Remove quotes that no longer inspire you
+- **Mark Quotes as Favorites**: Save your favorite quotes for easy access
+- **AI-Powered Quotes**: Generate motivational quotes from movies, TV shows, books, and more using Google's Gemini AI (requires API key)
+- **Image Motivation**: Display beautiful motivational images from a curated collection
+- **Local Storage**: Your API key and favorite quotes are saved locally in your browser
+- **API Key Management**: Enter, view, and clear your Gemini API key securely
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Requirements
 
-## Expanding the ESLint configuration
+- Node.js 14+ or newer
+- npm or yarn
+- Google Gemini API key (optional, for AI-generated quotes)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Setup
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+1. Install dependencies:
+   - npm: `npm install`
+   - yarn: `yarn`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+2. Start development server:
+   - npm: `npm start`
+   - yarn: `yarn start`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. For AI-generated quotes, obtain a Google Gemini API key:
+   - Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
+   - Create an API key
+   - Enter it in the app's API key field
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Usage
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Click the "Motivate Me" button to get a random motivational quote, image, or AI-generated content
+2. Enter your Gemini API key in the input field to enable AI-generated quotes
+3. Use the "Clear API Key" button to remove your stored key
+4. Use the "View API Key" button to check your current key status
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Build
+
+- npm: `npm run build`
+- yarn: `yarn build`
+
+## Testing
+
+- npm: `npm test` or `yarn test` (if tests are configured)
+
+## License
+
+MIT
+
+## Notes
+
+- The app uses Vite for fast development and building
+- Tailwind CSS is used for styling
+- API keys are stored only in localStorage and never transmitted to any server
+- Keep the project directory structure standard for Vite + React + TypeScript setup
