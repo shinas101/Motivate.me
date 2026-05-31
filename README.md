@@ -48,11 +48,10 @@ A React application that displays motivational quotes, images, and AI-generated 
 ## Build
 
 - npm: `npm run build`
-- yarn: `yarn build`
 
 ## Testing
 
-- npm: `npm test` or `yarn test` (if tests are configured)
+- npm: `npm test` (if tests are configured)
 
 ## License
 
